@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TipTop Frases Motivadoras</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="icon" href="custom-icon.png" type="image/png">
+</head>
+<body>
+  <!-- Navegación superior -->
+  <nav class="top-nav">
+    <button class="tab-button" data-tab="buscar">Buscar</button>
+    <button class="tab-button" data-tab="desafio">Desafío Diario</button>
+  </nav>
+
+  <!-- Secciones de contenido -->
+  <section id="home" class="tab-content active">
+    <h2>Inicio</h2>
+    <p>Bienvenido a <strong>TipTop Frases Motivadoras</strong>. Encuentra inspiración y frases motivadoras para cada día.</p>
+  </section>
+
+  <section id="consejos" class="tab-content">
+    <h2>Consejos</h2>
+    <button id="loadRandomAdvice">Cargar Consejo Aleatorio</button>
+    <div id="adviceList"></div>
+    <hr>
+    <h3>Filtrar Consejos</h3>
+    <input type="text" id="filterInput" placeholder="Filtrar por palabra clave">
+    <button id="applyFilter">Aplicar Filtro</button>
+    <div id="filteredAdviceList"></div>
+  </section>
+
+  <section id="buscar" class="tab-content">
+    <h2>Buscar Consejos</h2>
+    <input type="text" id="searchInput" placeholder="Ingresa palabra clave">
+    <button id="searchButton">Buscar</button>
+    <div id="searchResults"></div>
+  </section>
+
+  <section id="favoritos" class="tab-content">
+    <h2>Favoritos</h2>
+    <div id="favoritesList"></div>
+    <hr>
+    <h3>Añadir Favorito Manualmente</h3>
+    <input type="text" id="favoriteManual" placeholder="Ingresa un consejo">
+    <button id="addFavoriteManual">Añadir a Favoritos</button>
+  </section>
+
+  <section id="registro" class="tab-content">
+    <h2>Registro</h2>
+    <form id="registerForm">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="text" name="apellido" placeholder="Apellido" required>
+      <input type="email" name="correo" placeholder="Correo" required>
+      <input type="text" name="usuario" placeholder="Usuario" required>
+      <input type="password" name="contraseña" placeholder="Contraseña" required>
+      <input type="password" name="confirmarContraseña" placeholder="Confirmar Contraseña" required>
+      <input type="tel" name="telefono" placeholder="Teléfono" required>
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="registerMsg"></div>
+  </section>
+
+  <section id="desafio" class="tab-content">
+    <h2>Desafío Diario</h2>
+    <button id="loadDesafio">Cargar Desafío</button>
+    <div id="desafioContent"></div>
+  </section>
+
+  <!-- Menú inferior -->
+  <nav class="bottom-nav">
+    <button class="bottom-button" data-tab="home">🏠 Inicio</button>
+    <button class="bottom-button" data-tab="consejos">💡 Consejos</button>
+    <button class="bottom-button" data-tab="favoritos">⭐ Favoritos</button>
+    <button class="bottom-button" data-tab="registro">📝 Registro</button>
+  </nav>
+
+  <script src="Proceso.js"></script>
+</body>
+</html>
