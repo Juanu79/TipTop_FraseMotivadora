@@ -2,9 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Alternar pestañas (Navegación superior e inferior)
     const tabButtons = document.querySelectorAll('.tab-button, .bottom-button');
     const tabContents = document.querySelectorAll('.tab-content');
+    const apiInfoSection = document.getElementById('api-info'); // Referencia a la sección de API
 
     function showTab(tabId) {
         tabContents.forEach(tab => tab.classList.toggle('active', tab.id === tabId));
+
+        // Mostrar la sección de API solo en la pestaña "home"
+        if (apiInfoSection) {
+            apiInfoSection.style.display = tabId === "home" ? "block" : "none";
+        }
     }
 
     tabButtons.forEach(button => {
@@ -112,32 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loadFavorites(); // Cargar favoritos al iniciar
-
-    // Mostrar información de la API (nuevo cuadro externo)
-    const apiInfoSection = document.getElementById('api-info');
-    if (apiInfoSection) {
-        apiInfoSection.innerHTML = `
-            <img src="Imagenes/api-banner.png" alt="Descripción de la API">
-            <h2>¿Cómo funciona la Advice Slip API?</h2>
-            <p>La <strong>Advice Slip API</strong> es un servicio que permite obtener consejos aleatorios 
-            de manera rápida y sencilla. Se usa en esta aplicación para generar frases motivadoras 
-            cada día.</p>
-            <p>Puedes buscar, filtrar y marcar como favoritos los consejos para guardarlos y volver 
-            a verlos cuando lo necesites.</p>
-            <hr>
-            <p><strong>GitHub:</strong> <a href="https://github.com/Juanu79" target="_blank">Juanu79</a></p>
-            <p><strong>Versión:</strong> v.1.0.0</p>
-        `;
-    }
 });
-
-function showTab(tabId) {
-    tabContents.forEach(tab => tab.classList.toggle('active', tab.id === tabId));
-
-    // Ocultar la sección de API cuando el usuario cambia de pestaña
-    const apiInfoSection = document.getElementById('api-info');
-    if (apiInfoSection) {
-        apiInfoSection.style.display = tabId === "home" ? "block" : "none";
-    }
-}
 
