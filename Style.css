@@ -1,4 +1,18 @@
-/* Reset básico y box-sizing */
+/* Variables globales para colores */
+:root {
+  --color-bg: #001F3F; /* Azul oscuro */
+  --color-accent: #00FF66; /* Verde brillante */
+  --color-nav-bg: #002A50; /* Azul más profundo */
+  --color-text: #ffffff; /* Texto blanco para contraste */
+  --color-hover: #00CC55; /* Verde un poco más oscuro */
+  --color-border: #004080; /* Azul para bordes */
+  --color-light-bg: #003366; /* Azul intermedio */
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --radius-small: 8px;
+}
+
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,38 +20,55 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #E3F2FD; /* Azul claro */
-  color: #333;
-  padding-bottom: 60px; /* Reserva espacio para el menú inferior */
+  background: url('Imagenes/Fondo.png') no-repeat center fixed;
+  background-size: cover; /* Ajusta la imagen al tamaño completo */
+  position: relative;
+  color: var(--color-text);
+}
+
+/* Superposición para mejorar la legibilidad */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 31, 63, 0.7); /* Azul oscuro con transparencia */
+  z-index: -1;
 }
 
 /* Navegación superior */
 .top-nav {
   display: flex;
   justify-content: center;
-  background: #1565C0; /* Azul oscuro */
-  padding: 10px;
+  background: var(--color-nav-bg);
+  padding: var(--spacing-small);
 }
 
-.top-nav .tab-button {
+/* Estilos de botones */
+.top-nav .tab-button,
+.bottom-nav .bottom-button {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-text);
   font-size: 1rem;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: var(--spacing-small) var(--spacing-medium);
   transition: background 0.3s;
 }
 
-.top-nav .tab-button:hover {
-  background: #1E88E5; /* Azul más claro */
+.top-nav .tab-button:hover,
+.bottom-nav .bottom-button:hover {
+  background: var(--color-hover);
 }
 
 /* Secciones de contenido */
 .tab-content {
   padding: 20px;
   display: none;
+  background: rgba(0, 42, 80, 0.85); /* Fondo semitransparente */
+  border-radius: var(--radius-small);
 }
 
 .tab-content.active {
@@ -45,14 +76,15 @@ body {
   animation: fadeIn 0.5s;
 }
 
+/* Animaciones */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -62,80 +94,86 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #1565C0; /* Azul oscuro */
+  background: var(--color-nav-bg);
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
-  color: #fff;
+  padding: var(--spacing-small);
+  color: var(--color-text);
+  align-items: center;
 }
 
-.bottom-nav .bottom-button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
+/* Versión de la aplicación */
+.app-version {
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: var(--spacing-small);
+  font-weight: bold;
 }
 
 /* Botones e inputs generales */
 button {
-  background: #43A047; /* Verde */
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-bg);
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--radius-small);
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: var(--spacing-small);
   transition: background 0.3s;
 }
 
 button:hover {
-  background: #2E7D32; /* Verde oscuro */
+  background: var(--color-hover);
+  color: var(--color-text);
 }
 
+/* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="tel"] {
-  padding: 10px;
-  margin: 10px 0;
+  padding: var(--spacing-small);
+  margin: var(--spacing-small) 0;
   width: 100%;
-  border: 1px solid #66BB6A; /* Verde claro */
-  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background-color: rgba(0, 42, 80, 0.85);
+  color: var(--color-text);
 }
 
 /* Secciones */
 section {
-  background: #fff;
+  background: rgba(0, 42, 80, 0.85);
   margin: 20px auto;
   max-width: 600px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-small);
+  box-shadow: 0 2px 5px var(--color-border);
 }
 
-/* Formulario */
+/* Formularios */
 form {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: var(--spacing-medium);
 }
 
-/* Listados (consejos, favoritos, desafíos) */
+/* Listados */
 #adviceList,
 #filteredAdviceList,
 #searchResults,
 #favoritesList,
 #desafioContent {
-  margin-top: 15px;
+  margin-top: var(--spacing-small);
 }
 
+/* Elementos individuales */
 .advice-item,
 .favorite-item,
 .desafio-item {
-  background: #C8E6C9; /* Verde claro */
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  background: var(--color-nav-bg);
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+  border-radius: var(--radius-small);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,11 +181,29 @@ form {
 
 .advice-item button,
 .favorite-item button {
-  margin-left: 10px;
-  background: #43A047; /* Verde */
+  margin-left: var(--spacing-small);
+  background: var(--color-accent);
 }
 
 .advice-item button:hover,
 .favorite-item button:hover {
-  background: #2E7D32; /* Verde oscuro */
+  background: var(--color-hover);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--spacing-small);
+  background: var(--color-nav-bg);
+  color: var(--color-text);
+  font-size: 0.8rem;
+}
+
+.footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
