@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TipTop Frases Motivadoras</title>
+  <title>TipTop Frases Motivadoras - Advice Slip API</title>
   <link rel="stylesheet" href="Style.css">
   <link rel="icon" href="custom-icon.png" type="image/png">
 </head>
 <body>
+
   <!-- Navegación superior -->
   <nav class="top-nav">
     <button class="tab-button" data-tab="buscar">Buscar</button>
@@ -18,6 +19,11 @@
   <section id="home" class="tab-content active">
     <h2>Inicio</h2>
     <p>Bienvenido a <strong>TipTop Frases Motivadoras</strong>. Encuentra inspiración y frases motivadoras para cada día.</p>
+    <img src="motivational-image.png" alt="Inspiración y motivación" width="200">
+    <p>Esta aplicación utiliza la <strong>Advice Slip API</strong> para obtener frases motivadoras.</p>
+    <p><strong>Estudiante:</strong> Juan</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/JuanDev" target="_blank">JuanDev</a></p>
+    <p><strong>Versión:</strong> v.1.0.0</p>
   </section>
 
   <section id="consejos" class="tab-content">
@@ -29,13 +35,6 @@
     <input type="text" id="filterInput" placeholder="Filtrar por palabra clave">
     <button id="applyFilter">Aplicar Filtro</button>
     <div id="filteredAdviceList"></div>
-  </section>
-
-  <section id="buscar" class="tab-content">
-    <h2>Buscar Consejos</h2>
-    <input type="text" id="searchInput" placeholder="Ingresa palabra clave">
-    <button id="searchButton">Buscar</button>
-    <div id="searchResults"></div>
   </section>
 
   <section id="favoritos" class="tab-content">
@@ -74,6 +73,7 @@
     <button class="bottom-button" data-tab="consejos">💡 Consejos</button>
     <button class="bottom-button" data-tab="favoritos">⭐ Favoritos</button>
     <button class="bottom-button" data-tab="registro">📝 Registro</button>
+    <p class="app-version">Versión: v.1.0.0</p>
   </nav>
 
   <script src="Proceso.js"></script>
