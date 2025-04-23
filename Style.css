@@ -207,3 +207,23 @@ form {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Estilo para la sección de API */
+.api-content {
+  background: rgba(0, 42, 80, 0.85);
+  color: var(--color-text);
+  padding: var(--spacing-medium);
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: var(--radius-small);
+  box-shadow: 0 2px 5px var(--color-border);
+  text-align: center;
+  overflow: hidden; /* Evita que la imagen desborde el cuadro */
+}
+
+/* Ajuste para la imagen dentro del cuadro */
+.api-content img {
+  width: 100%; /* La imagen ocupa todo el ancho del cuadro */
+  height: auto; /* Ajusta la altura proporcionalmente */
+  border-radius: var(--radius-small); /* Redondea esquinas */
+}
