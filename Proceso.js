@@ -130,3 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 });
+
+function showTab(tabId) {
+    tabContents.forEach(tab => tab.classList.toggle('active', tab.id === tabId));
+
+    // Ocultar la sección de API cuando el usuario cambia de pestaña
+    const apiInfoSection = document.getElementById('api-info');
+    if (apiInfoSection) {
+        apiInfoSection.style.display = tabId === "home" ? "block" : "none";
+    }
+}
+
