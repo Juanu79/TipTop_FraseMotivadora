@@ -19,11 +19,11 @@
   padding: 0;
 }
 
-body {
-  background: url('Fondo.png') no-repeat center fixed;
-  background-size: cover; /* Ajusta la imagen al tamaño completo */
-  position: relative;
-  color: var(--color-text);
+@media (max-width: 600px) {
+  body {
+    background: url('Fondo.png') no-repeat center fixed;
+    background-size: cover;
+  }
 }
 
 /* Superposición para mejorar la legibilidad */
