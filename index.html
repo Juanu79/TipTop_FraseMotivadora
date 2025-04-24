@@ -15,29 +15,26 @@
     <button class="tab-button" data-tab="desafio">Desafío Diario</button>
   </nav>
 
-  <!-- Secciones de contenido -->
+  <!-- Secciones -->
   <section id="home" class="tab-content active">
     <h2>Inicio</h2>
     <p>Bienvenido a <strong>TipTop Frases Motivadoras</strong>. Encuentra inspiración y frases motivadoras para cada día.</p>
-
   </section>
 
   <section id="api-info" class="api-content">
-
     <h2>¿Cómo funciona la Advice Slip API?</h2>
-    <p>La <strong>Advice Slip API</strong> es un servicio que permite obtener consejos aleatorios 
-    de manera rápida y sencilla. Se usa en esta aplicación para generar frases motivadoras 
-    cada día.</p>
-    <p>Puedes buscar, filtrar y marcar como favoritos los consejos para guardarlos y volver 
-    a verlos cuando lo necesites.</p>
-    
-    <hr>
+    <p>La <strong>Advice Slip API</strong> permite obtener consejos aleatorios para motivarte cada día.</p>
+    <p>GitHub: <a href="https://github.com/Juanu79" target="_blank">Juanu79</a> | Versión: v.1.0.0</p>
+  </section>
 
-    <p><strong>GitHub:</strong> <a href="https://github.com/Juanu79" target="_blank">Juanu79</a></p>
-    <p><strong>Versión:</strong> v.1.0.0</p>
-</section>
-
-   
+  <section id="buscar" class="tab-content">
+    <h2>Buscar Consejo</h2>
+    <div id="buscadorContainer">
+      <input type="text" id="searchInput" placeholder="Buscar consejo...">
+      <button id="searchButton">Buscar</button>
+      <div id="searchResults"></div>
+    </div>
+  </section>
 
   <section id="consejos" class="tab-content">
     <h2>Consejos</h2>
@@ -80,7 +77,6 @@
     <div id="desafioContent"></div>
   </section>
 
-  <!-- Menú inferior -->
   <nav class="bottom-nav">
     <button class="bottom-button" data-tab="home">🏠 Inicio</button>
     <button class="bottom-button" data-tab="consejos">💡 Consejos</button>
@@ -89,11 +85,11 @@
     <p class="app-version">TipTop Frases Motivadoras - Advice Slip API | Versión: v.1.0.0</p>
   </nav>
 
-  <!-- Footer con datos mínimos -->
   <footer class="footer">
     <p>© 2025 Juan Urriago | GitHub: <a href="https://github.com/Juanu79" target="_blank">Juanu79</a></p>
   </footer>
 
   <script src="Proceso.js"></script>
+
 </body>
 </html>
