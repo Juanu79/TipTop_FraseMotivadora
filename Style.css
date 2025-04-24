@@ -18,12 +18,9 @@
   margin: 0;
   padding: 0;
 }
-
-@media (max-width: 600px) {
-  body {
-    background: url('Fondo.png') no-repeat center fixed;
-    background-size: cover;
-  }
+body {
+  background: url('Fondo.png') no-repeat center fixed;
+  background-size: 100vw 100vh;
 }
 
 /* Superposición para mejorar la legibilidad */
